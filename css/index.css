@@ -125,3 +125,39 @@ h2 {
   background-color: #005fa3;
   transform: scale(1.05);
 }
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #0077cc;
+  color: white;
+  margin-top: 30px;
+}
+
+#skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
+  list-style-type: none;
+}
+
+#skills li {
+  background-color: #0077cc;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+#skills li:hover {
+  background-color: #005fa3;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  #skills ul {
+    flex-direction: column;
+  }
+}
