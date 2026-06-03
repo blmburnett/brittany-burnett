@@ -47,3 +47,36 @@ for (let i = 0; i < skills.length; i++) {
   // Append li to ul
   skillsList.appendChild(skill);
 }
+// Select Projects section and list
+const projectSection = document.querySelector("#projects");
+const projectList = projectSection.querySelector("ul");
+
+// Fetch GitHub repositories
+fetch("https://api.github.com/users/blmburnett/repos")
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (repositories) {
+
+    console.log(repositories);
+
+    // Loop through repositories
+    for (let i = 0; i < repositories.length; i++) {
+
+      // Create list item
+      const project = document.createElement("li");
+
+      // Set repository name
+      project.innerText = repositories[i].name;
+
+      // Add to Projects list
+      projectList.appendChild(project);
+    }
+  })
+  .catch(function (error) {
+    console.error("Error fetching repositories:", error);
+
+    const errorMessage = document.createElement("li");
+    errorMessage.innerText = "Unable to load GitHub repositories.";
+    projectList.appendChild(errorMessage);
+  });

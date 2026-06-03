@@ -161,3 +161,40 @@ footer {
     flex-direction: column;
   }
 }
+
+#projects ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+#projects li {
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 8px;
+  min-width: 200px;
+  text-align: center;
+  flex: 1 1 200px;
+}
+
+#projects a {
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: bold;
+}
+
+#projects a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  #projects ul {
+    flex-direction: column;
+  }
+
+  #projects li {
+    width: 100%;
+  }
+}
