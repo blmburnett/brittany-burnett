@@ -1,0 +1,92 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: linear-gradient(135deg, #f5f7ff, #e8f0ff);
+}
+
+/* NAV BAR */
+nav {
+  background: #cc0000; /* Pokédex red */
+  padding: 12px;
+  text-align: left;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* TITLE */
+h1 {
+  margin-top: 20px;
+  color: #2a2a2a;
+  letter-spacing: 2px;
+}
+
+/* INPUT */
+input {
+  padding: 10px;
+  width: 220px;
+  border: 2px solid #cc0000;
+  border-radius: 8px;
+  outline: none;
+  margin-top: 10px;
+}
+
+/* BUTTONS */
+button {
+  padding: 10px 15px;
+  margin: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+/* Pokéball red button */
+button:nth-of-type(1) {
+  background: #ff3b3b;
+  color: white;
+}
+
+/* Pokéball blue button */
+button:nth-of-type(2) {
+  background: #3b82f6;
+  color: white;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* OUTPUT CARD */
+#output {
+  margin: 25px auto;
+  padding: 20px;
+  background: white;
+  width: 320px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border-top: 6px solid #cc0000;
+}
+
+/* Pokémon image styling */
+#output img {
+  width: 120px;
+  image-rendering: pixelated;
+}
+
+/* TEXT */
+#output h2 {
+  color: #cc0000;
+  margin-bottom: 10px;
+}
+
+#output p {
+  color: #333;
+}
