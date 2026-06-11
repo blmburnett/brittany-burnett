@@ -47,59 +47,36 @@ for (let i = 0; i < skills.length; i++) {
   // Append li to ul
   skillsList.appendChild(skill);
 }
+// Select Projects section and list
+const projectSection = document.querySelector("#projects");
+const projectList = projectSection.querySelector("ul");
 
-// Select the form by name attribute
-const messageForm = document.getElementsByName("leave_message")[0];
+// Fetch GitHub repositories
+fetch("https://api.github.com/users/blmburnett/repos")
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (repositories) {
 
-// Add submit event listener
-messageForm.addEventListener("submit", function (event) {
+    console.log(repositories);
 
-  // Prevent page refresh
-  event.preventDefault();
+    // Loop through repositories
+    for (let i = 0; i < repositories.length; i++) {
 
-  // Get values from form fields
-  const userName = event.target.usersName.value;
-  const userEmail = event.target.usersEmail.value;
-  const userMessage = event.target.usersMessage.value;
+      // Create list item
+      const project = document.createElement("li");
 
-  // Log values to the console
-  console.log("Name:", userName);
-  console.log("Email:", userEmail);
-  console.log("Message:", userMessage);
+      // Set repository name
+      project.innerText = repositories[i].name;
 
-  // Select the Messages section
-const messageSection = document.querySelector("#messages");
+      // Add to Projects list
+      projectList.appendChild(project);
+    }
+  })
+  .catch(function (error) {
+    console.error("Error fetching repositories:", error);
 
-// Select the ul inside the Messages section
-const messageList = messageSection.querySelector("ul");
-
-// Create a new list item
-const newMessage = document.createElement("li");
-
-// Add the message content
-newMessage.innerHTML = `
-  <a href="mailto:${userEmail}">${userName}</a>
-  <span> ${userMessage} </span>
-`;
-
-// Create remove button
-const removeButton = document.createElement("button");
-removeButton.innerText = "remove";
-removeButton.type = "button";
-
-// Remove message when button is clicked
-removeButton.addEventListener("click", function () {
-  const entry = removeButton.parentNode;
-  entry.remove();
-});
-
-// Add button to list item
-newMessage.appendChild(removeButton);
-
-// Add list item to messages list
-messageList.appendChild(newMessage);
-
-  event.target.reset();
-
-});
-
+    const errorMessage = document.createElement("li");
+    errorMessage.innerText = "Unable to load GitHub repositories.";
+    projectList.appendChild(errorMessage);
+  });
