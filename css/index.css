@@ -1,4 +1,6 @@
+/* ===== GENERAL PAGE STYLING ===== */
 
+/* Set the default font, background color, spacing, and text color for the page */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -7,6 +9,7 @@ body {
   color: #333;
 }
 
+/* Style the main page heading */
 h1 {
   font-size: 48px;
   font-weight: bold;
@@ -17,6 +20,7 @@ h1 {
   margin-top: 30px;
 }
 
+/* Style all section containers */
 section {
   background-color: white;
   margin: 20px;
@@ -24,6 +28,7 @@ section {
   border-radius: 10px;
 }
 
+/* Style section headings */
 h2 {
   font-size: 30px;
   font-weight: 600;
@@ -31,11 +36,15 @@ h2 {
   margin-bottom: 15px;
 }
 
+/* Improve readability of paragraph text */
 p {
   font-size: 18px;
   line-height: 1.6;
 }
 
+/* ===== NAVIGATION BAR ===== */
+
+/* Create a sticky navigation bar that stays at the top */
 nav {
   position: sticky;
   top: 0;
@@ -44,6 +53,7 @@ nav {
   z-index: 1000;
 }
 
+/* Arrange navigation links horizontally */
 .nav-links {
   display: flex;
   justify-content: center;
@@ -53,35 +63,21 @@ nav {
   padding: 0;
 }
 
+/* Style navigation links */
 .nav-links a {
   color: white;
   text-decoration: none;
   font-weight: bold;
 }
 
+/* Add hover effect to navigation links */
 .nav-links a:hover {
   text-decoration: underline;
 }
 
-h1 {
-  text-align: center;
-  font-size: 48px;
-  margin-top: 30px;
-  color: #2c3e50;
-}
+/* ===== EXPERIENCE SECTION ===== */
 
-section {
-  background-color: white;
-  margin: 20px;
-  padding: 25px;
-  border-radius: 10px;
-}
-
-h2 {
-  color: #0077cc;
-  margin-bottom: 20px;
-}
-
+/* Style each experience entry */
 .experience-item {
   border-left: 4px solid #0077cc;
   padding: 15px;
@@ -90,27 +86,36 @@ h2 {
   border-radius: 8px;
 }
 
+/* Display job title and date on the same line */
 .experience-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* Remove default heading margin */
 .experience-header h3 {
   margin: 0;
 }
 
+/* Style date text */
 .experience-header span {
   font-weight: bold;
   color: #555;
 }
 
+/* ===== CONNECT SECTION ===== */
+
+/* Display social links using flexbox */
 .connect-links {
   display: flex;
-  gap: 20px;
-  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
+  list-style-type: none;
 }
 
+/* Style social media buttons */
 .connect-links a {
   text-decoration: none;
   background-color: #0077cc;
@@ -121,11 +126,15 @@ h2 {
   transition: 0.3s ease;
 }
 
+/* Add hover animation */
 .connect-links a:hover {
   background-color: #005fa3;
   transform: scale(1.05);
 }
 
+/* ===== FOOTER ===== */
+
+/* Style footer section */
 footer {
   text-align: center;
   padding: 20px;
@@ -134,6 +143,37 @@ footer {
   margin-top: 30px;
 }
 
+/* ===== PROJECTS SECTION ===== */
+
+/* Remove default list styling */
+#projects ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Style individual project items */
+#projects li {
+  background: #f4f4f4;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+/* Style project links */
+#projects a {
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: bold;
+}
+
+/* Add hover effect to project links */
+#projects a:hover {
+  text-decoration: underline;
+}
+
+/* ===== SKILLS SECTION ===== */
+
+/* Display skills using flexbox */
 #skills ul {
   display: flex;
   flex-wrap: wrap;
@@ -142,6 +182,7 @@ footer {
   list-style-type: none;
 }
 
+/* Style individual skill badges */
 #skills li {
   background-color: #0077cc;
   color: white;
@@ -151,13 +192,99 @@ footer {
   transition: 0.3s ease;
 }
 
+/* Add hover animation */
 #skills li:hover {
   background-color: #005fa3;
   transform: scale(1.05);
 }
 
+/* Stack skills vertically on smaller screens */
 @media (max-width: 768px) {
   #skills ul {
     flex-direction: column;
   }
+}
+
+/* ===== MESSAGE FORM ===== */
+
+/* Arrange form elements vertically */
+#leave_message form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 500px;
+}
+
+/* Style text inputs and textarea */
+#leave_message input,
+#leave_message textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* Set minimum height for message box */
+#leave_message textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Style submit button */
+#leave_message button {
+  padding: 12px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Change button color when hovered */
+#leave_message button:hover {
+  background-color: #005fa3;
+}
+
+/* ===== MESSAGE LIST ===== */
+
+/* Remove default list styling */
+#messages ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Style each submitted message */
+#messages li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 10px;
+  background: #f4f4f4;
+  border-radius: 6px;
+}
+
+/* Style remove button */
+#messages button {
+  margin-left: auto;
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+
+/* Increase form field sizes for easier mobile use */
+@media (max-width: 768px) {
+
+  #leave_message input,
+  #leave_message textarea,
+  #leave_message button {
+    font-size: 18px;
+    padding: 14px;
+  }
+
 }
